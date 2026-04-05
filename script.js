@@ -5,19 +5,18 @@ document.addEventListener("DOMContentLoaded", function(){
   const talkButton = document.querySelector(".talk-button");
   const contactInfo = document.getElementById("contact-info");
 
-  // MENU: Show only clicked section
+  // Show only one section at a time
   links.forEach(link=>{
     link.addEventListener("click", function(e){
       e.preventDefault();
       const targetId = this.dataset.section;
 
-      sections.forEach(sec => sec.style.display = "none"); // hide all
-      document.getElementById(targetId).style.display = "block"; // show selected
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      sections.forEach(sec => sec.classList.remove("active")); // hide all
+      document.getElementById(targetId).classList.add("active"); // show selected
     });
   });
 
-  // TALK BUTTON: toggle contact info
+  // Toggle contact info
   talkButton.addEventListener("click", function(){
     contactInfo.style.display = contactInfo.style.display === "block" ? "none" : "block";
   });
