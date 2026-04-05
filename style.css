@@ -13,7 +13,7 @@ body{
 /* NAVIGATION */
 nav{
   display:flex;
-  justify-content:center;
+  justify-content:space-equally;
   background:#4a90e2;
   padding:15px;
   position:sticky;
