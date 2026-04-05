@@ -23,8 +23,11 @@ nav{
 
 nav ul{
   display:flex;
+  justify-content: space-evenly;
+  width: 100% 
   list-style:none;
-  gap:25px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a{
