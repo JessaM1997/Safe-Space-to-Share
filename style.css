@@ -40,9 +40,14 @@ nav a:hover{
 
 /* HERO TITLE BELOW NAV */
 .hero{
+  display: flex;
+  flext-directon: column;
+  align-items: center;
+  justify-content: center;
   text-align:center;
   padding:80px 20px 40px 20px;
   background:white;
+  width: 100%;
 }
 
 .hero h1{
