@@ -1,13 +1,25 @@
+/* Reset some default browser styles */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+/* Body */
+
 body{
 
-font-family: Arial;
-margin:0;
-background:#f4f6fb;
+font-family: Arial, sans-serif;
+background:#f5f7fb;
+color:#333;
+line-height:1.6;
 
 }
 
 
-/* Navigation */
+/* Navigation Bar */
 
 nav{
 
@@ -15,9 +27,20 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:20px;
 background:#4a90e2;
 color:white;
+
+padding:20px;
+
+position:sticky;
+top:0;
+
+}
+
+.logo{
+
+font-size:22px;
+font-weight:bold;
 
 }
 
@@ -25,7 +48,7 @@ nav ul{
 
 list-style:none;
 display:flex;
-gap:20px;
+gap:25px;
 
 }
 
@@ -33,6 +56,13 @@ nav a{
 
 color:white;
 text-decoration:none;
+font-weight:500;
+
+}
+
+nav a:hover{
+
+text-decoration:underline;
 
 }
 
@@ -46,36 +76,79 @@ text-align:center;
 
 }
 
+
+/* Home */
+
 .home{
 
 background:white;
 
 }
 
-.stories{
+.home h2{
+
+font-size:36px;
+margin-bottom:20px;
+
+}
+
+.home p{
+
+max-width:600px;
+margin:auto;
+
+}
+
+
+/* About */
+
+#about{
 
 background:#eef3ff;
 
 }
 
-.message{
+#about p{
 
-background:white;
+max-width:700px;
+margin:auto;
 
 }
 
 
 /* Stories */
 
+.stories{
+
+background:white;
+
+}
+
 .stories ul{
 
-max-width:600px;
-margin:auto;
+max-width:650px;
+margin:30px auto;
 text-align:left;
 
 }
 
 .stories li{
+
+margin-bottom:20px;
+font-style:italic;
+
+}
+
+
+/* Message Section */
+
+.message{
+
+background:#eef3ff;
+
+}
+
+.message p{
 
 margin-bottom:20px;
 
@@ -87,12 +160,17 @@ margin-bottom:20px;
 .talk-button{
 
 padding:12px 30px;
+font-size:16px;
+
 border:none;
 border-radius:8px;
+
 background:#4a90e2;
 color:white;
-font-size:16px;
+
 cursor:pointer;
+
+transition:0.3s;
 
 }
 
@@ -103,7 +181,7 @@ background:#357abd;
 }
 
 
-/* Contact info */
+/* Contact Info */
 
 #contact-info{
 
@@ -123,9 +201,40 @@ display:none;
 
 footer{
 
-text-align:center;
-padding:20px;
 background:#333;
 color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:40px;
+
+}
+
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+gap:10px;
+
+}
+
+nav ul{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+.home h2{
+
+font-size:28px;
+
+}
 
 }
