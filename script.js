@@ -1,22 +1,34 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-const talkButton = document.querySelector(".talk-button");
-const contactInfo = document.getElementById("contact-info");
+  const sections = document.querySelectorAll(".section");
+  const links = document.querySelectorAll("nav a");
+  const talkButton = document.querySelector(".talk-button");
+  const contactInfo = document.getElementById("contact-info");
 
-talkButton.addEventListener("click", function(){
+  // MENU NAVIGATION
+  links.forEach(link => {
+    link.addEventListener("click", function(e){
+      e.preventDefault(); // prevent default scroll
+      const targetId = this.getAttribute("href").substring(1); // remove #
+      
+      // hide all sections
+      sections.forEach(sec => sec.style.display = "none");
 
-if(contactInfo.style.display === "block"){
+      // show the clicked section
+      document.getElementById(targetId).style.display = "block";
 
-contactInfo.style.display = "none";
+      // scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
 
-}
-
-else{
-
-contactInfo.style.display = "block";
-
-}
-
-});
+  // TALK BUTTON
+  talkButton.addEventListener("click", function(){
+    if(contactInfo.style.display === "block"){
+      contactInfo.style.display = "none";
+    } else {
+      contactInfo.style.display = "block";
+    }
+  });
 
 });
