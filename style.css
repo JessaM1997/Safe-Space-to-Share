@@ -18,6 +18,9 @@ nav{
   background:#4a90e2;
   color:white;
   padding:20px;
+  position:sticky;
+  top:0;
+  z-index:1000; /* keep nav above everything */
 }
 
 nav ul{
@@ -29,6 +32,8 @@ nav ul{
 nav a{
   color:white;
   text-decoration:none;
+  font-weight:500;
+  cursor:pointer; /* make clickable */
 }
 
 nav a:hover{
@@ -39,12 +44,16 @@ nav a:hover{
 .section{
   padding:80px 20px;
   text-align:center;
-  display:none; /* hide all sections initially */
+  display:none; /* hide all sections */
+}
+
+.section.active{
+  display:block; /* show active section */
 }
 
 #contact-info{
   margin-top:20px;
-  display:none; /* hide contact info initially */
+  display:none;
 }
 
 .talk-button{
@@ -62,15 +71,11 @@ nav a:hover{
   background:#357abd;
 }
 
+/* FOOTER */
 footer{
   background:#333;
   color:white;
   text-align:center;
   padding:20px;
   margin-top:40px;
-}
-
-/* Show Home by default */
-#home{
-  display:block;
 }
