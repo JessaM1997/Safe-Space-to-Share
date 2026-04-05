@@ -1,17 +1,23 @@
-function showContact(){
+// Wait until the page finishes loading
+document.addEventListener("DOMContentLoaded", function () {
 
-let contact = document.getElementById("contact-info");
+    // Get the button and contact section
+    const talkButton = document.querySelector(".talk-button");
+    const contactInfo = document.getElementById("contact-info");
 
-if(contact.style.display === "block"){
+    // Hide contact info initially
+    contactInfo.style.display = "none";
 
-contact.style.display = "none";
+    // Add click event to the button
+    talkButton.addEventListener("click", function () {
 
-}
+        // Toggle contact visibility
+        if (contactInfo.style.display === "none") {
+            contactInfo.style.display = "block";
+        } else {
+            contactInfo.style.display = "none";
+        }
 
-else{
+    });
 
-contact.style.display = "block";
-
-}
-
-}
+});
